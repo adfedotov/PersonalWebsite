@@ -4,13 +4,68 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Index page</title>
+    <title>Andrei Fedotov</title>
+    <link rel="stylesheet" href="../public/stylesheets/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:700|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
   </head>
   <body>
-    <ul>
-      <% names.forEach(function(name) { %>
-        <li><%= name %></li>
-      <% }); %>
-    </ul>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <div class="header-text">
+            <h1>Hi,</h1>
+            <h1>I am</h1>
+            <h1>Andrei</h1>
+          </div>
+          <nav class="menu">
+            <a href="#">About Me</a>
+            <a href="#">Projects</a>
+            <a href="#">Skills</a>
+            <a href="#">Resume</a>
+          </nav>
+        </div>
+
+      </header>
+      <div class="content">
+        <div class="about">
+          <h2>About Me</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="projects">
+          <h2>Projects</h2>
+          <div class="showcase">
+            <div class="project-module">
+              <img src="https://relationedge.com/wp-content/uploads/2014/10/300x300.png" alt="">
+              <div class="project-description">
+                <h3>Example Project</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="project-links">
+                  <img src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="">
+                  <img src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="project-module">
+              <img src="https://relationedge.com/wp-content/uploads/2014/10/300x300.png" alt="">
+              <div class="project-description">
+                <h3>Example Project</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="skills">
+          Skills
+        </div> -->
+        <div class="resume">
+          <h2>Download My Resume</h2>
+            <a href="#">AndreiFedotovResume.pdf</a>
+        </div>
+      </div>
+      <footer class="footer">
+        Footer
+      </footer>
+    </div>
   </body>
 </html>

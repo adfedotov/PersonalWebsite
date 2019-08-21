@@ -7,21 +7,43 @@ const port = 3000;
 const server = http.createServer();
 
 server.on('request', function(req, res) {
-  const { headers, method, url } = req;
-
   res.setHeader('Content-Type', 'text/html');
 
-  if (method === 'GET' && url === '/') {
-    const ex = ["httt", "h423", "3232"]
-    const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {names: ex});
+  if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
+    const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {});
     res.statusCode = 200;
     res.write(html);
     res.end();
-  } else {
-    res.statusCode = 404;
-    res.end("Not Found");
   }
 
+  // Static files (CSS)
+  if (req.url.indexOf('.css') != -1) {
+    fs.readFile(__dirname + req.url, function(err, data) {
+      if (err) {
+        console.error(err);
+        res.statusCode = 404;
+        res.end();
+      } else {
+        res.setHeader("Content-Type", "text/css");
+        res.statusCode = 200;
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.url.indexOf('.jpeg') != -1) {
+    fs.readFile(__dirname + req.url, function(err, data) {
+      if (err) {
+        console.error(err);
+        res.statusCode = 404;
+      } else {
+        res.setHeader("Content-Type", "image/jpeg");
+        res.statusCode = 200;
+        res.write(data);
+      }
+      res.end();
+    });
+  }
+  //console.log(`${req.connection.remoteAddress} accessed ${req.url} --- ${res.statusCode}`);
 });
 
 server.listen(port, hostname, function() {
