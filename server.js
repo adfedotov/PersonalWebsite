@@ -19,15 +19,21 @@ const filePaths = {
 }
 
 server.on('request', function(req, res) {
-  res.setHeader('Content-Type', 'text/html');
-
-  // make it async
-  if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
-    const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {});
-    res.statusCode = 200;
-    res.write(html);
-    res.end();
+  if (req.method === 'GET') {
+    if (req.url === '/') {
+      const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {});
+      res.setHeader('Content-Type', 'text/html');
+      res.statusCode = 200;
+      res.write(html);
+      res.end();
+    } else if (req.url === '/downloads/resume') {
+      res.setHeader("Content-Disposition", "attachment; filename=AndreiFedotovResume.pdf");
+      fs.createReadStream(__dirname + "/public/downloads/AndreiFedotovResume.pdf").pipe(res);
+    }
   }
+
+
+
 
   // Static files (CSS, JPG, JS)
   const pathInfo = path.parse(req.url);
@@ -36,14 +42,16 @@ server.on('request', function(req, res) {
   }
 
 
-
+  if (!res.complete) {
+    res.statusCode = 404;
+    res.end();
+  }
   //console.log(`${req.connection.remoteAddress} accessed ${req.url} --- ${res.statusCode}`);
 });
 
 const handleFileRequest = function(pathInfo, res) {
   if (pathInfo.dir === filePaths[pathInfo.ext]) {
     const filePath = __dirname + filePaths[pathInfo.ext] + "/" + pathInfo.base;
-
     fs.readFile(filePath, function(err, data) {
       if (err) {
         console.error(err);
