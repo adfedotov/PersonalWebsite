@@ -46,8 +46,10 @@
 }
 
 .footer {
-  height: 5rem;
+  height: 4rem;
   background-color: #56944e;
+  display: flex;
+  align-items: center;
 }
 
 .header-content {
@@ -110,9 +112,10 @@
 }
 
 .about p {
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 2.7rem;
   padding: 2rem;
+  max-width: 50%;
 }
 
 .projects h2 {
@@ -137,10 +140,15 @@
 }
 
 .project-module img {
-  max-width: 250px;
-  max-height: 250px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   margin: 1rem;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
 }
 
 .project-description h3 {
@@ -148,8 +156,14 @@
   font-size: 2rem;
 }
 
+.project-description p {
+  flex-grow: 1;
+  line-height: 1.2rem;
+}
+
+
 .project-links img {
-  width: 50px;
+  width: 40px;
   height: auto;
 }
 
@@ -175,6 +189,7 @@
   color: #fff;
 }
 
-.resume-download-button {
-
+.footer p {
+  color: #fff;
+  margin-left: 2rem;
 }
