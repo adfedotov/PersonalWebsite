@@ -10,7 +10,7 @@
 
 .header {
   height: 100vh;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/background.jpeg);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/background.jpg);
   background-size: cover;
   background-position: top;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
