@@ -1,11 +1,11 @@
-const http = require('http'),
+const https = require('https'),
       ejs = require('ejs')
       fs = require('fs'),
       path = require('path');
 
 const hostname = '127.0.0.1';
 const port = 3000;
-const server = http.createServer();
+const server = https.createServer();
 
 const contentTypes = {
   ".css": "text/css",
