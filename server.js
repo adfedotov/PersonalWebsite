@@ -24,6 +24,13 @@ const filePaths = {
   ".woff": "/public/fonts"
 }
 
+const defaultHeaders = { /* MOVE IT TO NGINX */
+  "X-XSS-Protection": "1; mode=block",
+  "x-frame-options": "SAMEORIGIN",
+  "x-content-type-options": "nosniff",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+}
+
 server.on('request', function(req, res) {
   if (req.method === 'GET') {
     const pathInfo = path.parse(req.url);
@@ -32,16 +39,17 @@ server.on('request', function(req, res) {
       console.log(`${req.connection.remoteAddress} - ${req.url}`);
       const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {});
       res.setHeader('Content-Type', 'text/html');
-      res.statusCode = 200;
+      res.writeHead(200, defaultHeaders);
       res.write(html);
       res.end();
     }
     /* CHECK IF IT IS A PDF DOWNLOAD REQUEST */
     else if (req.url === '/downloads/resume') {
+      console.log(`${req.connection.remoteAddress} - ${req.url}`);
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader("Content-Disposition", "attachment; filename=AndreiFedotovResume.pdf");
+      res.writeHead(200, defaultHeaders);
       fs.createReadStream(__dirname + "/public/downloads/AndreiFedotovResume.pdf").pipe(res);
-      res.end();
     }
     /* CHECK IF IT IS A FILE ACCESS */
     else if (pathInfo.ext !== '' && pathInfo.ext !== '.html') {
@@ -49,10 +57,11 @@ server.on('request', function(req, res) {
     }
     /* NO RESPONSE */
     else {
-      res.statusCode = 404;
+      res.writeHead(404, defaultHeaders);
       res.end();
     }
   }
+  // console.log(`${req.connection.remoteAddress} - ${req.url}`);
 });
 
 const handleFileRequest =  async function(pathInfo, res) {
@@ -61,16 +70,16 @@ const handleFileRequest =  async function(pathInfo, res) {
     fs.readFile(filePath, function(err, data) {
       if (err) {
         console.error(err);
-        res.statusCode = 404;
+        res.writeHead(404, defaultHeaders);
         res.end();
       } else {
         res.setHeader("Content-Type", contentTypes[pathInfo.ext]);
-        res.statusCode = 200;
+        res.writeHead(200, defaultHeaders);
         res.end(data);
       }
     });
   } else {
-    res.statusCode = 404;
+    res.writeHead(404, defaultHeaders);
     res.end();
   }
 }
