@@ -5,78 +5,127 @@
   <head>
     <meta charset="utf-8">
     <title>Andrei Fedotov</title>
+    <!-- <meta name="viewport" content=""> -->
+    <link rel="shortcut icon" href="../public/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../public/stylesheets/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:700|Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/stylesheets/style.css">
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="header-content">
-          <div class="header-text">
-            <h1>Hi,</h1>
-            <h1>I am</h1>
-            <h1>Andrei</h1>
-          </div>
-          <nav class="menu">
-            <a href="#" to=".about">About Me</a>
-            <a href="#" to=".projects">Projects</a>
-            <!-- <a href="#" to="">Skills</a> -->
-            <a href="#" to=".resume">Resume</a>
-          </nav>
-        </div>
-
-      </header>
-      <div class="content">
-        <div class="about">
-          <h2>About Me</h2>
-          <p>I am an enthusiastic and highly motivated undergraduate student majoring in Computer Information Systems at W. P. Carey School of Business. I firmly believe that technology can solve major problems that humankind is facing today and am keen on making a difference solving them.</p>
-          <p>At the moment, I'm looking for a summer 2020 internship as a software engineer. I'm particularly interested in working on Cloud Computing solutions and IoT devices.</p>
-        </div>
-        <div class="projects">
-          <h2>Projects</h2>
-          <div class="showcase">
-            <div class="project-module">
-              <img src="../public/img/project_personal.jpg" alt="">
-              <div class="project-description">
-                <h3>This website :)</h3>
-                <p>My personal website is currently under development and I plan to make many changes to it. I want to host all my projects on this domain, secure and optimize the server, and implement a system to easily edit the content from the admin panel.</p>
-                <div class="project-links">
-                  <img src="../public/img/gh32.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="project-module">
-              <img src="../public/img/project_bookworm.jpg" alt="" class="project-module-img">
-              <div class="project-description">
-                <h3>BookWorm</h3>
-                <p>BookWorm is a web application that allows you to record own thoughts on the book you are reading. It lets you never forget what the book is about and what you noted as important from reading it.</p>
-                <div class="project-links">
-                  <img src="../public/img/gh32.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="skills">
-          Skills add later
-        </div> -->
-        <div class="resume">
-          <h2>Download My Resume</h2>
-            <a href="../downloads/resume" download>AndreiFedotovResume.pdf</a>
+    <header class="header">
+      <div class="header-text">
+        <h1>Hi,</h1>
+        <h1>I am</h1>
+        <h1>Andrei</h1>
+      </div>
+      <div class="header-content">
+        <nav class="menu">
+          <a href="#" to=".about">About Me</a>
+          <a href="#" to=".projects">Projects</a>
+          <!-- <a href="#" to="">Skills</a> -->
+          <a href="#" to=".resume">Resume</a>
+        </nav>
+        <div class="header-socials">
+          <a href="https://github.com/adfedotov">
+            <img src="../public/img/gh32.png" alt="" class="icon">
+          </a>
+          <a href="https://www.instagram.com/andrewfedotovv/">
+            <img src="../public/img/ig.png" alt="" class="icon">
+          </a>
         </div>
       </div>
-      <footer class="footer">
-        <p>&copy; Andrei Fedotov. All rights reserved.</p>
-      </footer>
+    </header>
+    <div class="content">
+      <div class="about container">
+        <h2 class="container-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I am an enthusiastic and highly motivated undergraduate student majoring in Computer Information Systems at W. P. Carey School of Business. I firmly believe that technology can solve major problems that humankind is facing today and I am keen on making a difference solving them.</p>
+            <p>At the moment, I'm looking for a summer 2020 internship as a software engineer. I'm particularly interested in working on Cloud based solutions and IoT devices.</p>
+          </div>
+          <div class="about-badges">
+            <div class="badge">
+              <h3 class="badge-title">Education</h3>
+              <div class="badge-content">
+                <img src="../public/img/asu_logo.png" alt="">
+                <div class="badge-description">
+                  <h4 class="badge-subtitle">Arizona State University</h4>
+                  <p>Bachelor of Science in Computer Information Systems</p>
+                  <p class="badge-date">August 2018 - Present</p>
+                </div>
+              </div>
+              <div class="badge-content">
+                <img src="../public/img/csm_logo.jpg" alt="">
+                <div class="badge-description">
+                  <h4 class="badge-subtitle">College of San Mateo</h4>
+                  <p>Associate of Science in Business Adminitration</p>
+                  <p>Associate of Art in Economics</p>
+                  <p class="badge-date">August 2015 - May 2018</p>
+                </div>
+              </div>
+            </div>
 
+            <div class="badge">
+              <h3 class="badge-title">Extracurricular Activities</h3>
+              <div class="badge-content">
+                <img src="../public/img/disc_logo.jpg" alt="">
+                <div class="badge-description">
+                  <h4 class="badge-subtitle">Department of Information Systems Club</h4>
+                  <p>Member of IT and Event Planning Committees</p>
+                  <p class="badge-date">October 2018 - Present</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="projects container">
+        <h2 class="container-title">Projects</h2>
+        <div class="projects-showcase">
+          <div class="project-module">
+            <img src="../public/img/project_personal.jpg" alt="">
+            <div class="project-description">
+              <h3>This website :)</h3>
+              <p>My personal website is currently under development and I plan to make many changes to it. I want to host all my projects on this domain, secure and optimize the server, and implement a system to easily edit the content from the admin panel.</p>
+              <div class="project-links">
+                <a href="https://github.com/adfedotov/PersonalWebsite">
+                  <img src="../public/img/gh32.png" alt="" class="icon">
+                </a>
+              </div>
+            </div>
+          </div>
 
-      <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-      </script>
-      <script src="../public/javascripts/script.js" charset="utf-8"></script>
+          <div class="project-module">
+            <img src="../public/img/project_bookworm.jpg" alt="" class="project-module-img">
+            <div class="project-description">
+              <h3>BookWorm</h3>
+              <p>BookWorm is a web application that allows you to record own thoughts on the book you are reading. It lets you never forget what the book is about and what you noted as important from reading it.</p>
+              <div class="project-links">
+                <a href="https://github.com/adfedotov/BookWorm">
+                  <img src="../public/img/gh32.png" alt="" class="icon">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="skills">
+        Skills add later
+      </div> -->
+      <div class="resume container">
+        <h2 class="container-title">Download My Resume</h2>
+          <a href="../downloads/resume" download>AndreiFedotovResume.pdf</a>
+      </div>
     </div>
+    <footer class="footer">
+      <p>&copy; Andrei Fedotov. All rights reserved.</p>
+    </footer>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script src="../public/javascripts/script.js" charset="utf-8"></script>
   </body>
 </html>
