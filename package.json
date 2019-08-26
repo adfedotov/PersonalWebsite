@@ -1,0 +1,14 @@
+{
+  "name": "PersonalWebsite",
+  "version": "1.0.0",
+  "description": "Personal website/portfolio (Node JS with EJS)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  }
+}
