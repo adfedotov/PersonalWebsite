@@ -32,16 +32,21 @@ const defaultHeaders = { /* MOVE IT TO NGINX */
 }
 
 server.on('request', function(req, res) {
+
   if (req.method === 'GET') {
     const pathInfo = path.parse(req.url);
-
     if (req.url === '/') {
-      console.log(`${req.connection.remoteAddress} - ${req.url}`);
-      const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {});
       res.setHeader('Content-Type', 'text/html');
       res.writeHead(200, defaultHeaders);
-      res.write(html);
-      res.end();
+      getContent(function(err, content) {
+        if (err) {
+          console.error("getContent Error: \n" + err);
+        } else {
+          const html = ejs.render(fs.readFileSync('views/index.ejs', 'utf-8'), {about: content.about, projects: content.projects});
+          res.end(html);
+        }
+      });
+      console.log(`[${new Date().toTimeString()}] ${req.headers["x-real-ip"]} - ${req.url} - ${res.statusMessage} ${res.statusCode}`);
     }
     /* CHECK IF IT IS A PDF DOWNLOAD REQUEST */
     else if (req.url === '/downloads/resume') {
@@ -50,6 +55,7 @@ server.on('request', function(req, res) {
       res.setHeader("Content-Disposition", "attachment; filename=AndreiFedotovResume.pdf");
       res.writeHead(200, defaultHeaders);
       fs.createReadStream(__dirname + "/public/downloads/AndreiFedotovResume.pdf").pipe(res);
+      console.log(`[${new Date().toTimeString()}] ${req.headers["x-real-ip"]} - ${req.url} - ${res.statusMessage} ${res.statusCode}`);
     }
     /* CHECK IF IT IS A FILE ACCESS */
     else if (pathInfo.ext !== '' && pathInfo.ext !== '.html') {
@@ -61,15 +67,15 @@ server.on('request', function(req, res) {
       res.end();
     }
   }
-  // console.log(`${req.connection.remoteAddress} - ${req.url}`);
+  // console.log(`${req.url}`);
 });
 
-const handleFileRequest =  async function(pathInfo, res) {
+const handleFileRequest = function(pathInfo, res) {
   if (pathInfo.dir === filePaths[pathInfo.ext]) {
     const filePath = __dirname + filePaths[pathInfo.ext] + "/" + pathInfo.base;
     fs.readFile(filePath, function(err, data) {
       if (err) {
-        console.error(err);
+        console.error("Read File Error: " + err);
         res.writeHead(404, defaultHeaders);
         res.end();
       } else {
@@ -82,6 +88,23 @@ const handleFileRequest =  async function(pathInfo, res) {
     res.writeHead(404, defaultHeaders);
     res.end();
   }
+}
+
+const getContent = function(callback) {
+  fs.readFile("content/content.json", function(err, data) {
+    if (err) {
+      console.error("Read File Error: \n" + err);
+      callback(err);
+      return;
+    }
+    try {
+      const content = JSON.parse(data);
+      callback(null, content);
+    } catch(err) {
+      console.error("Parse JSON Error: \n" + err);
+      callback(err);
+    }
+  });
 }
 
 server.listen(port, hostname, function() {
