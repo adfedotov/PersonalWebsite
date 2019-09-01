@@ -1,0 +1,55 @@
+{
+  "about": {
+    "title": "About Me",
+    "text": ["I am an enthusiastic and highly motivated undergraduate student majoring in Computer Information Systems at W. P. Carey School of Business. I firmly believe that technology can solve major problems that humankind is facing today and I am keen on making a difference solving them.",
+              "At the moment, I'm looking for a summer 2020 internship as a software engineer. I'm particularly interested in working on Cloud based solutions and IoT devices."],
+    "badges": [
+      {
+        "title": "Education",
+        "badge_content": [
+          {
+            "subtitle": "Arizona State University",
+            "icon": "../public/assets/images/asu_logo.png",
+            "badge_text": ["Bachelor of Science in Computer Information Systems"],
+            "date": "August 2018 - Present"
+          },
+          {
+            "subtitle": "College of San Mateo",
+            "icon": "../public/assets/images/csm_logo.jpg",
+            "badge_text": ["Associate of Science in Business Adminitration", "Associate of Art in Economics"],
+            "date": "August 2015 - May 2018"
+          }
+        ]
+      },
+      {
+        "title": "Extracurricular Activities",
+        "badge_content": [
+          {
+            "subtitle": "Department of Information Systems Club",
+            "icon": "../public/assets/images/disc_logo.jpg",
+            "badge_text": ["Member of IT and Event Planning Committees"],
+            "date": "October 2018 - Present"
+          }
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "Projects",
+    "project_list": [
+      {
+        "title": "This webiste :)",
+        "img": "../public/assets/images/project_personal.jpg",
+        "description": ["My personal website is currently under development and I plan to make many changes to it. I want to host all my projects on this domain, secure and optimize the server, and implement a system to easily edit the content from the admin panel."],
+        "github": "https://github.com/adfedotov/PersonalWebsite"
+      },
+      {
+        "title": "BookWorm",
+        "img": "../public/assets/images/project_bookworm.jpg",
+        "description": ["BookWorm is a web application that allows you to record own thoughts on the book you are reading. It lets you never forget what the book is about and what you noted as important from reading it."],
+        "github": "https://github.com/adfedotov/BookWorm"
+      }
+    ]
+  }
+}
