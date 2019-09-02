@@ -263,7 +263,6 @@ a {
     font-size: 5px;
   }
   .header-text {
-    color:blue;
     font-size: 10vh;
     margin-bottom: 10vh;
   }
@@ -292,7 +291,6 @@ a {
 
 @media screen and (min-width: 640px) {
   .header-text {
-    color:orange;
     margin-bottom: 7vh;
   }
   .header-socials img {
@@ -391,7 +389,6 @@ a {
     flex-grow: 1;
     padding: 0 5%;
     margin-top: 15%;
-    color: purple;
   }
   .header-content {
     align-self: center;
@@ -449,7 +446,6 @@ a {
 
 @media only screen and (max-height: 620px) and (orientation: landscape) {
   .header-text {
-    color: yellow;
     margin: auto 10rem;
     font-size: 10rem;
   }
