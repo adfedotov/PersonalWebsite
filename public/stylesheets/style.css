@@ -1,6 +1,6 @@
 
 html {
-  font-size: 10px;
+  font-size: 3px;
 }
 
 :root {
@@ -19,33 +19,33 @@ html {
   font-style: normal;
   font-weight: 400;
   src: local('Lora Regular'), local('Lora-Regular'),
-       url('../fonts/lora-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../assets/fonts/lora-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
   src: local('Lora Bold'), local('Lora-Bold'),
-       url('../fonts/lora-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../assets/fonts/lora-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'),
-       url('../fonts/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../assets/fonts/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('../fonts/roboto-v20-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../assets/fonts/roboto-v20-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 .header {
   height: 100vh;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/background.jpg);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../assets/images/background.jpg);
   background-size: cover;
   background-position: top;
   display: flex;
@@ -83,7 +83,7 @@ a {
   font-family: var(--main-font-family-header);
   padding: 5rem 0;
   text-align: left;
-  margin: auto;
+  margin: 15% auto 20% auto;
   animation: headerText 3s;
 }
 
@@ -115,14 +115,14 @@ a {
 }
 
 .menu a, .menu a:link, .menu a:visited {
-  font-size: 6rem;
+  font-size: 5rem;
   color: var(--main-font-light);
   border: 2px solid gray;
   border-radius: var(--main-border-radius);
   font-family: var(--main-font-family-header);
   font-weight: 400;
   margin-bottom: 1rem;
-  padding: 2rem;
+  padding: 1vh 2rem;
   transition: all .2s;
 }
 
@@ -139,7 +139,7 @@ a {
 
 .header-socials img {
   padding: 2rem;
-  width: 10rem;
+  width: 8%;
   height: auto;
 }
 
@@ -150,7 +150,7 @@ a {
 }
 
 .about p {
-  font-size: 4rem;
+  font-size: 5rem;
   padding: 2rem;
 }
 
@@ -168,7 +168,7 @@ a {
 .projects-showcase {
   display: flex;
   flex-direction: column;
-  margin: 10rem 0;
+  margin: 2rem 0;
 }
 
 .project-module {
@@ -183,8 +183,8 @@ a {
 }
 
 .project-module img {
-  width: 60rem;
-  height: 60rem;
+  width: 200px;
+  height: auto;
   border-radius: 50%;
   margin-top: 2rem;
 }
@@ -202,7 +202,8 @@ a {
 }
 
 .project-description p {
-  font-size: 4rem;
+  font-size: 4.6rem;
+  line-height: 4.4rem;
   font-family: var(--main-font-family);
   font-weight: 400;
 }
@@ -214,7 +215,7 @@ a {
 }
 
 .project-links img {
-  width: 84px;
+  width: 12rem;
   height: auto;
 }
 
@@ -227,12 +228,16 @@ a {
   padding: 6rem 2rem;
 }
 
+.resume h2 {
+  font-size: 6rem;
+}
+
 .resume a {
   border: 1px solid var(--main-footer-bg-color);
   color: var(--main-footer-bg-color);
   padding: 3rem;
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
   margin: 3rem auto 4rem auto;
   border-radius: var(--main-border-radius);
   transition: all .5s;
@@ -248,36 +253,134 @@ a {
 
 .footer {
   background-color: var(--main-footer-bg-color);
-  font-size: 2rem;
+  font-size: 4rem;
   padding: 4rem 2rem;
 }
 
 
-@media only screen and (min-device-width: 650px) {
+@media screen and (min-width: 320px) {
   html {
-    font-size: 7px;
+    font-size: 5px;
+  }
+  .header-text {
+    color:blue;
+    font-size: 10vh;
+    margin-bottom: 10vh;
+  }
+  .about-text p{
+    font-size: 4rem;
+  }
+  .project-module {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+  .project-description p {font-size: 3rem;}
+  .project-module img {
+    width: auto;
+    height: 200px;
+    align-self: center;
+  }
+  .project-links img {
+    width: 40px;
+    height: 40px;
+  }
+  .resume h2 {font-size: 5rem;}
+  .resume a {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .header-text {
+    color:orange;
+    margin-bottom: 7vh;
+  }
+  .header-socials img {
+    padding: 2rem;
+    width: 5%;
+    height: auto;
+  }
+  .about-content {
+    display: flex;
+  }
+  .about-text {
+    width: 60%;
+    padding: 5rem 2rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 4rem;
+  }
+  .about-text p {
+    font-size: 5rem;
+  }
+  .about-badges {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .badge {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .badge-title {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--main-font-family-header);
+  }
+  .badge-content {
+    display: flex;
+    padding: 3rem;
+  }
+  .badge-content img {
+    width: 48px;
+    height: 48px;
+    padding: 1rem;
+    border: 3px solid gray;
+    object-fit: cover;
+  }
+  .badge-description {
+    padding-left: 2rem;
+  }
+  .badge-description p {
+    font-size: 3.2rem;
+    line-height: 90%;
+    padding-bottom: 0;
+  }
+  .badge-date {color:gray; margin-top: 2rem;}
+  .badge-subtitle {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  .projects-showcase {
+    align-items: center;
+    justify-content: center;
   }
   .project-module {
     flex-direction: row;
+    width: 80%;
   }
-  .project-description h3 {text-align: left;}
-  .project-description p {font-size: 4rem;}
   .project-module img {
-    width: auto;
-    height: 266px;
-    align-self: flex-start;
+    margin-top: 0;
   }
-  .project-links img {
-    width: 64px;
-    height: 64px;
+  .project-description h3 {
+    text-align: left;
+    font-size: 5rem;
   }
-  .resume h2 {font-size: 6rem;}
-  .resume a {
+
+  .project-description p {
     font-size: 4rem;
   }
 }
 
-@media only screen and (min-width: 1024px), screen and (orientation: landscape) {
+
+
+@media only screen and (min-width: 992px) {
   html {
     font-size: 6px;
   }
@@ -285,14 +388,16 @@ a {
     flex-direction: row;
   }
   .header-text {
-    align-self: center;
     flex-grow: 1;
     padding: 0 5%;
+    margin-top: 15%;
+    color: purple;
   }
   .header-content {
     align-self: center;
     flex-grow: 1;
-    margin-top: 25%;
+    margin-top: 50vh;
+    padding-bottom: 15rem;
   }
   .header-socials img {width: 6rem; animation: menuAnim 1s;}
   .menu {
@@ -316,61 +421,15 @@ a {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
   }
   .menu a:active {transform: translateY(3rem);}
-
-  .about-content {
-    display: flex;
-  }
-  .about-text {
-    width: 35%;
-    padding: 5rem 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .about-text p {
-    font-size: 5rem;
-  }
   .about-badges {
-    flex-grow: 1;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    margin-left: 5rem;
   }
   .badge {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin-bottom: 3rem;
+    width: 75%;
+    align-self: flex-end;
   }
-  .badge-title {
-    font-size: 4rem;
-    font-weight: 700;
-    font-family: var(--main-font-family-header);
-  }
-  .badge-content {
-    display: flex;
-    padding: 3rem;
-  }
-  .badge-content img {
-    width: 56px;
-    height: 56px;
-    padding: 1rem;
-    border: 3px solid gray;
-    object-fit: cover;
-  }
-  .badge-description {
-    padding-left: 2rem;
-  }
-  .badge-description p {
-    font-size: 3rem;
-    line-height: 90%;
-    padding-bottom: 0;
-  }
-  .badge-date {color:gray; margin-top: 2rem;}
-  .badge-subtitle {
-    font-size: 4rem;
-    font-weight: 700;
+  .about-text {
+    width: 45%;
   }
   .projects-showcase {
     align-items: center;
@@ -383,8 +442,45 @@ a {
     width: 7rem;
     height: 7rem;
   }
+  .footer {
+    font-size: 3rem;
+  }
 }
-@media only screen and (min-width: 1500px) {
+
+@media only screen and (max-height: 620px) and (orientation: landscape) {
+  .header-text {
+    color: yellow;
+    margin: auto 10rem;
+    font-size: 10rem;
+  }
+  .header {
+    flex-direction: row;
+  }
+  .header-text {
+    align-self: center;
+    flex-grow: 1;
+  }
+  .header-content {
+    align-self: center;
+    flex-grow: 1;
+    margin: 35vh 5% auto 5%;
+    padding-bottom: 5rem;
+  }
+  .header-socials img {
+    width: 5rem;
+    height: auto;
+  }
+  .projects-showcase {
+    align-items: center;
+    justify-content: center;
+  }
+  .project-module {
+    width: 75%;
+  }
+
+}
+
+@media only screen and (min-width: 1300px) {
   .project-module img {
     align-self: flex-start;
   }
