@@ -1,4 +1,4 @@
-const accessFile = require('../config/access.json');
+const accessFile = require('../config/config.json');
 
 var access = {};
 

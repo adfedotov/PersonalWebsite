@@ -11,12 +11,21 @@ const mimeTypes = {
   ".pdf": "application/pdf"
 }
 
+const defaultDirectory = require('../config/config.json').public_directory;
+
 module.exports = sendFile;
 
 function sendFile(res, pathToFile, pipe=false) {
 
-	const directory = "";
+	const directory = defaultDirectory;
 	const fileInfo = path.parse(pathToFile);
+
+	// If accessed file is not supported, return
+	if (!(fileInfo.ext in mimeTypes)) {
+		res.writeHead(404);
+		res.end("Page Not Found");
+		return false;
+	}
 
 	if (arguments.length === 1) {
 		directory = arguments[0];
@@ -29,6 +38,7 @@ function sendFile(res, pathToFile, pipe=false) {
 			if (err) {
 				console.error("servefile ReadFile: " + err);
 				res.writeHead(404, {});
+				res.end();
 			} else {
 				res.writeHead(200, {"Content-Type": mimeTypes[fileInfo.ext]});
 				res.end(data);
@@ -41,6 +51,7 @@ function sendFile(res, pathToFile, pipe=false) {
 			fs.createReadStream(fullPath).pipe(res);
 		} catch(err) {
 			res.writeHead(404, {});
+			res.end();
 			console.error("servefile ReadSream: " + err);
 		}
 	}

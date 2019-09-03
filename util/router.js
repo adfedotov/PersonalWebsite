@@ -12,7 +12,7 @@ var handleRequest = {};
 module.exports = handleRequest;
 
 handleRequest.get = function(req, res) {
-	const path = url.parse(req.url).pathname;
+	const path = url.parse(req.url).path;
 	
 	if (!isFile(req.url)) {
 		switch (path) {
@@ -21,7 +21,7 @@ handleRequest.get = function(req, res) {
 				renderPage("./views/index.ejs", res, content());
 				break;
 			case "/downloads/resume":
-				serveFile(res, url.parse("/public/assets/pdf/AndreiFedotovResume.pdf").pathname, true);
+				serveFile(res, url.parse("/assets/pdf/AndreiFedotovResume.pdf").pathname, true);
 				break;
 			case "/admin":
 				renderPage("./views/admin.ejs", res);
@@ -29,11 +29,11 @@ handleRequest.get = function(req, res) {
 			case "/admin/edit": // Not setup yet
 				// renderPage("./views/edit.ejs", res);
 				res.writeHead(404);
-				res.end("Page Not Found")
+				res.end();
 				break;
 			default:
 				res.writeHead(404);
-				res.end("Page Not Found");
+				res.end();
 		}
 		logger(req, res);
 	} else {

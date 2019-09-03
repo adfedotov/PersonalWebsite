@@ -1,5 +1,4 @@
 const http = require('http'),
-      access = require('./config/access.json'),
       router = require('./util/router');
 
 const hostname = '127.0.0.1';
