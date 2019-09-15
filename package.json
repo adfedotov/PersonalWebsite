@@ -1,12 +1,15 @@
 {
   "name": "PersonalWebsite",
-  "version": "1.0.0",
-  "description": "Personal website/portfolio (Node JS with EJS)",
+  "version": "1.0.1",
+  "description": "Personal website/portfolio",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Andrei Fedotov",
   "dependencies": {
-    "ejs": "^1.0.0"
+    "ejs": "^2.7.1"
   },
   "engines": {
     "node": ">= 10.0.0"
