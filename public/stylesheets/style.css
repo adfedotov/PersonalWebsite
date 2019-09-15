@@ -70,7 +70,7 @@ a {
   transition: all 1s;
 }
 .icon:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+  /*box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);*/
   transform: translateY(-1rem);
 }
 
@@ -138,7 +138,6 @@ a {
 }
 
 .header-socials img {
-  padding: 2rem;
   width: 8%;
   height: auto;
 }
@@ -253,6 +252,7 @@ a {
 
 .footer {
   background-color: var(--main-footer-bg-color);
+  color: var(--main-font-dark);
   font-size: 4rem;
   padding: 4rem 2rem;
 }
@@ -434,6 +434,10 @@ a {
   }
   .project-module {
     width: 80%;
+    padding-right: 5rem;
+  }
+  .project-description p {
+    font-size: 3rem;
   }
   .project-links img {
     width: 7rem;

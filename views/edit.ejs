@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test</title>
-	<link rel="shortcut icon" href="../public/assets/images/favicon.ico" type="image/x-icon">
+	<title>Andrei Fedotov - Admin</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/edit.css">
 </head>
-<body>
-	<h1>Edit</h1>
+<body class="edit">
+	<a href="" class="logout button">Log Out</a>
+	<div class="block">
+		<h1><%= about.title %></h1>
+		<% 
+			let text = '';
+			about.text.forEach(function(p) {
+				text += p + '\u000A';
+			});
+		%>
+		<textarea class="text-box"><%= text %></textarea>
+
+		<div class="badges">
+			<% about.badges.forEach(function(badge) { %>
+				<h3><%= badge.title %></h3>
+				<div class="badge">
+					<% badge.badge_content.forEach(function(desc) { %>
+						<input type="text" class="subtitle" name="subtitle" value="<%= desc.subtitle %>">
+						<% desc.badge_text.forEach(function(name) { %>
+							<input type="text" class="item" name="badgeInfo" value="<%= name %>">
+						<% }); %>
+					<% }); %>
+				</div>
+			<% }); %>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript" src="../javascripts/jquery-3.4.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../javascripts/script.js" charset="utf-8"></script>
 </body>
 </html>
