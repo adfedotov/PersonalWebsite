@@ -31,7 +31,7 @@ session.handleLogin = function(req, res) {
     } else {
       // if code is wrong and there are cookies in request, clear them
       clearCookies(req, res);
-      res.writeHead(400);
+      res.writeHead(401);
       res.end();
     }
   });
@@ -44,7 +44,7 @@ session.handleLogout = function(req, res) {
     delete sessions[sid];
     res.writeHead(200);
   } else {
-    res.writeHead(400);
+    res.writeHead(401);
   }
 
   res.end();
