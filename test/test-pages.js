@@ -1,5 +1,8 @@
 const expect = require('chai').expect;
 const request = require('request');
+const ejs = require('ejs');
+const fs = require('fs');
+const content = require('../util/content');
 
 const hrefBase = 'http://127.0.0.1:3000';
 
@@ -39,6 +42,16 @@ describe('Status', function() {
   });
 });
 
+describe('Content', function() {
+  let html = '';
 
-
-
+  describe('Index page', function() {
+    it('Content is valid', function(done) {
+      html = ejs.render(fs.readFileSync('./views/index.ejs', 'utf-8'), content());
+      request(hrefBase, function(err, res, body) {
+        expect(body).to.equal(html);
+      });
+      done();
+    });
+  });
+});
