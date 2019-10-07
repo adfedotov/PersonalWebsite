@@ -1,5 +1,6 @@
 const accessFile = require('../config/config.json');
 const crypto = require('crypto');
+const cookie = require('./cookie');
 
 const session = {};
 
@@ -39,7 +40,7 @@ session.handleLogin = function(req, res) {
 
 session.handleLogout = function(req, res) {
   if (session.isLoggedIn(req)) {
-    const sid = parseCookies(req.headers.cookie)['SID'];
+    const sid = cookie.parse(req.headers.cookie)['SID'];
     clearCookies(req, res);
     delete sessions[sid];
     res.writeHead(200);
@@ -59,7 +60,7 @@ session.isLoggedIn = function(req) {
     return false;
   }
 
-  const cookies = parseCookies(req.headers.cookie);
+  const cookies = cookie.parse(req.headers.cookie);
 
   // compare with cookie record on server
   if (cookies['SID'] in sessions) {
@@ -91,7 +92,7 @@ function clearCookies(req, res) {
     return;
   }
 
-  const cookies = parseCookies(req.headers.cookie);
+  const cookies = cookie.parse(req.headers.cookie);
   
   let resetCookies = [];
   for (let key in cookies) {
@@ -102,21 +103,6 @@ function clearCookies(req, res) {
   }
 
   res.setHeader('Set-Cookie', resetCookies);
-}
-
-/**
- * Parse a string of cookies
- * Returns dictionary
- */
-function parseCookies(cookies) {
-  let cookieDict = {};
-
-  cookies.split(';').forEach(function(cookie) {
-    let parts = cookie.split('=');
-    cookieDict[parts[0].trim()] = parts[1];
-  });
-
-  return cookieDict;
 }
 
 /**
@@ -138,8 +124,8 @@ function createSession(req, res, callback) {
     session_id.update(buffer);
     session_id = session_id.digest('hex');
 
-    // assign to cookie SID= ; Expires= ; Secure; HttpOnly
-    res.setHeader('Set-Cookie', [`SID=${session_id}`, `Expires=${expires.toGMTString()}`, 'Secure', 'HttpOnly']);
+    // assign to cookie
+    res.setHeader('Set-Cookie', [cookie.serialize('SID', session_id), cookie.serialize('Expires', expires.toGMTString())]);
 
     sessions[session_id] = expires;
     callback(undefined, session_id);
