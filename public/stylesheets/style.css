@@ -184,7 +184,7 @@ a {
 }
 
 .project-module img {
-  width: 200px;
+  width: auto;
   height: 200px;
   border-radius: 50%;
   margin-top: 2rem;
@@ -296,7 +296,7 @@ a {
   }
   .project-description p {font-size: 3.5rem; text-align: center;}
   .project-module img {
-    width: 200px;
+    width: auto;
     height: 200px;
     align-self: center;
   }
