@@ -168,6 +168,7 @@ a {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
+  justify-content: space-between;
 }
 
 .project-module {
@@ -175,6 +176,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 261px;
 }
 
 .project-module:not(:last-child) {
@@ -183,7 +185,7 @@ a {
 
 .project-module img {
   width: 200px;
-  height: auto;
+  height: 200px;
   border-radius: 50%;
   margin-top: 2rem;
 }
@@ -191,26 +193,42 @@ a {
 .project-description {
   padding: 2rem;
   font-family: var(--main-font-family-header);
+  min-height: 237px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .project-description h3 {
-  font-size: 6rem;
+  font-size: 5.2rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .project-description p {
-  font-size: 4.6rem;
+  font-size: 4.2rem;
   line-height: 4.4rem;
   font-family: var(--main-font-family);
   font-weight: 400;
+  text-align: left;
+}
+
+.project-description-used {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.project-description-used strong {
+  font-weight: bold;
 }
 
 .project-links {
-  float: right;
-  margin: auto;
+  /* align-self: flex-end; */
   padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .project-links img {
@@ -266,6 +284,9 @@ a {
     font-size: 10vh;
     margin-bottom: 10vh;
   }
+  .header-socials img {
+    padding: 0 10px;
+  }
   .about-text p{
     font-size: 4rem;
   }
@@ -273,9 +294,9 @@ a {
     flex-direction: column;
     padding: 2rem 0;
   }
-  .project-description p {font-size: 3rem;}
+  .project-description p {font-size: 3.5rem; text-align: center;}
   .project-module img {
-    width: auto;
+    width: 200px;
     height: 200px;
     align-self: center;
   }
@@ -348,6 +369,7 @@ a {
     font-size: 3.2rem;
     line-height: 90%;
     padding-bottom: 0;
+    text-align: left;
   }
   .badge-date {color:gray; margin-top: 2rem;}
   .badge-subtitle {
@@ -438,6 +460,7 @@ a {
   }
   .project-description p {
     font-size: 3rem;
+    text-align: left;
   }
   .project-links img {
     width: 7rem;
@@ -474,6 +497,9 @@ a {
     align-items: center;
     justify-content: center;
   }
+  .project-description p {
+    text-align: left;
+  }
   .project-module {
     width: 75%;
   }
@@ -490,6 +516,12 @@ a {
   .projects-showcase {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .project-description p {
+    font-size: 3rem;
+  }
+  p.project-description-used {
+    font-size: 2.7rem;
   }
   .project-module {
     width: 45%;

@@ -10,7 +10,7 @@
           {
             "subtitle": "Arizona State University",
             "icon": "./assets/images/asu_logo.png",
-            "badge_text": ["Bachelor of Science in Computer Information Systems"],
+            "badge_text": ["Bachelor of Science in Computer Information Systems", "GPA: 3.99"],
             "date": "August 2018 - Present"
           },
           {
@@ -39,16 +39,32 @@
     "title": "Projects",
     "project_list": [
       {
-        "title": "This webiste :)",
-        "img": "./assets/images/project_personal.jpg",
-        "description": ["My personal website is currently under development and I plan to make many changes to it. I want to host all my projects on this domain, secure and optimize the server, and implement a system to easily edit the content from the admin panel."],
-        "github": "https://github.com/adfedotov/PersonalWebsite"
-      },
-      {
         "title": "BookWorm",
         "img": "./assets/images/project_bookworm.jpg",
-        "description": ["BookWorm is a web application that allows you to record own thoughts on the book you are reading. It lets you never forget what the book is about and what you noted as important from reading it."],
+        "description": ["BookWorm is a web application that allows you to record own thoughts on the book you are reading."],
+        "used": ["Python", "Flask", "PostgreSQL", "GoodReadsAPI", "QuillJS", "HTML", "CSS"],
         "github": "https://github.com/adfedotov/BookWorm"
+      },
+      {
+        "title": "NBT-Parser",
+        "img": "./assets/images/project_nbt.png",
+        "description": ["Parser for Named Binary Tag (NBT) files used by Minecraft to store game data."],
+        "used": ["Java"],
+        "github": "https://github.com/adfedotov/NBT-Parser"
+      },
+      {
+        "title": "Twitch Chat Bot",
+        "img": "./assets/images/project_bot.jpg",
+        "description": ["Chat bot implementation for twitch.tv. Connects to twitch's IRC server, parses messages sent by users in chat, and emits events that can be handled by the developer"],
+        "used": ["JavaScript", "Node.js"],
+        "github": "https://github.com/adfedotov/twitch-chat-bot"
+      },
+      {
+        "title": "This website",
+        "img": "./assets/images/project_personal.jpg",
+        "description": ["My personal website is currently under development and I plan to make many changes to it. I want to host all my web projects on this domain"],
+        "used": ["JavaScript", "Node.js", "Nginx", "EJS", "HTML", "CSS"],
+        "github": "https://github.com/adfedotov/PersonalWebsite"
       }
     ]
   }
