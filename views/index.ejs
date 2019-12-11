@@ -80,6 +80,14 @@
                 <% project.description.forEach(function(line) { %>
                   <p><%- line %></p>
                 <% }); %>
+                <% 
+                  let used = '';
+                  for (let i = 0; i < project.used.length; i++) {
+                    used += project.used[i];
+                    if (i < project.used.length - 1) used += ', ';
+                  }
+                %>
+                <p class="project-description-used"><strong>Used: </strong><%- used %></p>
                 <div class="project-links">
                   <a href="<%- project.github %>">
                     <img src="./assets/images/gh32.png" alt="" class="icon">
