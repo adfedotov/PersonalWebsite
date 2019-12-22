@@ -46,6 +46,13 @@
         "github": "https://github.com/adfedotov/BookWorm"
       },
       {
+        "title": "SSO Server",
+        "img": "./assets/images/project_sso.png",
+        "description": ["A Single Sign On (SSO) server implementation that can be used to handle authentication across subdomains."],
+        "used": ["Express", "MongoDB", "Docker", "docker-compose", "JWT"],
+        "github": "https://github.com/adfedotov/sso-server"
+      },
+      {
         "title": "NBT-Parser",
         "img": "./assets/images/project_nbt.png",
         "description": ["Parser for Named Binary Tag (NBT) files used by Minecraft to store game data."],
