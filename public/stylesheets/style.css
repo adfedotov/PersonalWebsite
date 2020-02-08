@@ -151,6 +151,8 @@ a {
 .about p {
   font-size: 5rem;
   padding: 2rem;
+  font-family: var(--main-font-family);
+  line-height: 140%;
 }
 
 .about-badges {
@@ -331,7 +333,7 @@ a {
     margin-right: 4rem;
   }
   .about-text p {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .about-badges {
     flex-grow: 1;
@@ -364,16 +366,21 @@ a {
   }
   .badge-description {
     padding-left: 2rem;
+    font-family: var(--main-font-family);
   }
   .badge-description p {
     font-size: 3.2rem;
     line-height: 90%;
     padding-bottom: 0;
+    padding-top: 1.2rem;
     text-align: left;
   }
-  .badge-date {color:gray; margin-top: 2rem;}
+  .badge-description p:nth-child(n+3) {
+    padding-top: 1rem;
+  }
+  .badge-date {color:gray; margin-top: 1rem;}
   .badge-subtitle {
-    font-size: 4rem;
+    font-size: 3.4rem;
     font-weight: 700;
   }
 

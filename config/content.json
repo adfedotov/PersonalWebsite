@@ -1,8 +1,8 @@
 {
   "about": {
     "title": "About Me",
-    "text": ["I am an enthusiastic and highly motivated undergraduate student majoring in Computer Information Systems at W. P. Carey School of Business. I firmly believe that technology can solve major problems that humankind is facing today and I am keen on making a difference solving them.",
-              "At the moment, I'm looking for a summer 2020 internship as a software engineer. I'm particularly interested in working on Cloud based solutions and IoT devices."],
+    "text": ["I am an enthusiastic and highly motivated undergraduate student majoring in Computer Information Systems at Arizona State University. I firmly believe that technology can solve major problems that humankind is facing today and I am keen on making a difference solving them.",
+              "At the moment, I'm looking for a summer 2020 internship."],
     "badges": [
       {
         "title": "Education",
@@ -10,7 +10,7 @@
           {
             "subtitle": "Arizona State University",
             "icon": "./assets/images/asu_logo.png",
-            "badge_text": ["Bachelor of Science in Computer Information Systems", "GPA: 3.99"],
+            "badge_text": ["Bachelor of Science in Computer Information Systems, 3.91"],
             "date": "August 2018 - Present"
           },
           {
